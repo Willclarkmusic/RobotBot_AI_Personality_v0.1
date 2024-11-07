@@ -10,8 +10,10 @@ public class ChatGPT_Manager : MonoBehaviour
     private List<ChatMessage> message = new List<ChatMessage>();
 
 
+
     public async void AskChatGPT(string newText)
     {
+
         ChatMessage newMessage = new ChatMessage();
         newMessage.Content = newText;
         newMessage.Role = "user";

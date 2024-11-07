@@ -1,11 +1,8 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Networking;
-using UnityEngine.UI;
 using Meta.WitAi.TTS.Utilities;
-using System.Linq;
-using System;
+using TMPro;
 
 
 public class Gemini_Manager : MonoBehaviour
@@ -14,17 +11,19 @@ public class Gemini_Manager : MonoBehaviour
     [SerializeField] private string prompt;
     [SerializeField] private TTSSpeaker ttsSpeaker;
 
+    public TMPro.TMP_InputField inputField;
+    
+
     private void Start()
     {
 
     }
 
-    public void AskGemini(string userPrompt)
+    public void AskGemini(string finalPrompt)
     {
-        prompt = userPrompt;
+        prompt = finalPrompt;
         StartCoroutine(sendDataToGas());
     }
-
 
     private IEnumerator sendDataToGas()
     {
